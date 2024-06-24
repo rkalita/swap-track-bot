@@ -1,0 +1,26 @@
+version: '3.9'
+services:
+  stb_backend:
+    container_name: stb
+    image: normanlitka/stb:0.0.1
+    build:
+      context: .
+    ports:
+      - '3001:3001'
+    env_file: .env
+    depends_on:
+      - stb_postgres
+
+  stb_postgres:
+    container_name: stb_postgres
+    hostname: postgres
+    image: 'postgres:13'
+    ports:
+      - '5432:5432'
+    restart: always
+    env_file: .env
+    volumes:
+      - bot_volume:/var/lib/postgres/data
+
+volumes:
+  bot_volume: {}
