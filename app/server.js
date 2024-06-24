@@ -22,8 +22,6 @@ const start = () => {
     console.log('\nrequest sent\n');
   }, 15000);
 
-  axios.get('http://0.0.0.0:3001/api/swap');
-
   fastify.listen({
     port: 3001,
     host: '0.0.0.0'

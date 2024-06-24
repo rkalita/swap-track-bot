@@ -13,10 +13,10 @@ services:
 
   stb_postgres:
     container_name: stb_postgres
-    hostname: postgres
+    hostname: stb_postgres
     image: 'postgres:13'
     ports:
-      - '5432:5432'
+      - '5431:5432'
     restart: always
     env_file: .env
     volumes:
