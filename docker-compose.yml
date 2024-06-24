@@ -11,7 +11,7 @@ services:
     depends_on:
       - stb_postgres
     networks:
-      - stb_network
+      - fomo_network
 
   stb_postgres:
     container_name: stb_postgres
@@ -24,11 +24,11 @@ services:
     volumes:
       - bot_volume:/var/lib/postgresql/data
     networks:
-      - stb_network
+      - fomo_network
 
 volumes:
   bot_volume: {}
 
 networks:
-  stb_network:
+  fomo_network:
     driver: bridge
