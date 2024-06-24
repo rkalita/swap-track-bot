@@ -5,7 +5,7 @@ const axios = require('axios');
 const bot = new Telegraf(process.env.BOT_TOKEN)
 
 bot.start((ctx) => {
-    const id = ctx.chat.id;
+    const id = ctx?.chat?.id || ctx?.form?.id;
     axios.patch('http://0.0.0.0:3001/api/chat', {id}).then(() => {
         ctx.replyWithHTML(`Bot has been launched`);
     }).catch(error => {
@@ -15,7 +15,7 @@ bot.start((ctx) => {
 
 // Listen for the bot being removed from a chat
 bot.command('launch', (ctx) => {
-    const id = ctx.chat.id;
+    const id = ctx?.chat?.id || ctx?.form?.id;
     axios.patch('http://0.0.0.0:3001/api/chat', {id}).then(() => {
         ctx.replyWithHTML(`Bot has been launched`);
     }).catch(error => {
