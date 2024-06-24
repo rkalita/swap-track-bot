@@ -10,6 +10,8 @@ services:
     env_file: .env
     depends_on:
       - stb_postgres
+    networks:
+      - stb_network
 
   stb_postgres:
     container_name: stb_postgres
@@ -21,6 +23,12 @@ services:
     env_file: .env
     volumes:
       - bot_volume:/var/lib/postgres/data
+    networks:
+      - stb_network
 
 volumes:
   bot_volume: {}
+
+networks:
+  stb_network:
+    driver: bridge
