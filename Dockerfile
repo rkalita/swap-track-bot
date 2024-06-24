@@ -1,6 +1,6 @@
 FROM node:22
 
-EXPOSE 3000
+EXPOSE 3001
 
 # Use latest version of npm
 RUN npm install npm@latest -g
