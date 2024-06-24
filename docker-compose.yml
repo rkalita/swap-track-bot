@@ -22,7 +22,7 @@ services:
     restart: always
     env_file: .env
     volumes:
-      - bot_volume:/var/lib/postgres/data
+      - bot_volume:/var/lib/postgresql/data
     networks:
       - stb_network
 
