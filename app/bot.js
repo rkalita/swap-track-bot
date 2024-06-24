@@ -23,6 +23,20 @@ bot.command('launch', (ctx) => {
     });
 });
 
+// Listen for the bot being added to a group
+bot.on('new_chat_members', (ctx) => {
+    ctx.message.new_chat_members.forEach((member) => {
+        if (member.id === ctx.botInfo.id) {
+            const id = ctx.chat.id;
+            axios.patch('http://0.0.0.0:3001/api/chat', {id}).then(() => {
+                ctx.replyWithHTML(`Bot has been launched`);
+            }).catch(error => {
+                console.error('Error launching:', error);
+            });
+        }
+    });
+});
+
 // Listen for the bot being removed from a chat
 bot.on('left_chat_member', (ctx) => {
     if (ctx.leftChatMember.id === ctx.botInfo.id) {
