@@ -74,8 +74,7 @@ ${"🟢".repeat(iconsCount)}
             }
 
             const chats = await client.query(`SELECT id FROM chats`);
-            console.log(chats.rows);
-            const existedChats = chats.rows.length ? chats.map(chat => chat.id) : [];
+            const existedChats = chats.rows.length ? chats.rows.map(chat => chat.id) : [];
 
             for (const j in existedChats) {
                 try {
