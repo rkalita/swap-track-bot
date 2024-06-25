@@ -29,6 +29,10 @@ async function routes(fastify, options) {
                         if (filteredEvents[i].data.amount_y_out !== '0' && existedChats.length) {
                             let iconsCount = Math.floor((+filteredEvents[i].data.amount_y_out) / 100000000);
 
+                            if (iconsCount > 100) {
+                                iconsCount = 100;
+                            }
+
                             for (const j in existedChats) {
                                 try {
                                     await bot.telegram.sendMessage(
