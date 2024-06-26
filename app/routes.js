@@ -91,7 +91,7 @@ ${"🍩".repeat(donuts)}
 
 🍩 x${donuts} Gold Donuts 
 
-📊 <a href="https://dexscreener.com/aptos/pcs-1896" style="color: BLUE; text-decoration: none;">CHART</a> 🔥 <a href="https://app.panora.exchange/swap?pair=APT_FOMO" style="color: BLUE; text-decoration: none;">BUY FOMO</a>
+📊 <a href="https://dexscreener.com/aptos/pcs-1896" style="color: BLUE; text-decoration: none;">CHART</a> 🔥 <a href="https://app.panora.exchange/swap?pair=APT_FOMO" style="color: BLUE; text-decoration: none;">BUY FOMO</a> 🍩 <a href="https://t.me/tg_tap_bot" style="color: BLUE; text-decoration: none;">Join FOMO TAP</a> ❓ <a href="https://t.me/aptosfomo/26791" style="color: BLUE; text-decoration: none;">How to CLAIM</a>
                                         `,
                         { parse_mode: 'HTML', disable_web_page_preview: true }
                     );
