@@ -26,7 +26,11 @@ async function routes(fastify, options) {
                     for (const i in filteredEvents) {
                         await client.query(`INSERT INTO swaps (sequence_number, buy_value, sell_value) VALUES($1,$2,$3) ON CONFLICT DO NOTHING;`, [filteredEvents[i].sequence_number, +filteredEvents[i].data.amount_y_out, +filteredEvents[i].data.amount_y_in]);
 
-                        if (filteredEvents[i].data.amount_y_out !== '0' && existedChats.length) {
+                        if (
+                            filteredEvents[i].data.amount_y_out !== '0' &&
+                            existedChats.length &&
+                            (+(filteredEvents[i].data.amount_y_out) / 1000000) >= 2000000
+                        ) {
                             let iconsCount = Math.floor((+filteredEvents[i].data.amount_y_out) / 10000000000);
 
                             if (iconsCount > 400) {
