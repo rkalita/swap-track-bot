@@ -29,7 +29,7 @@ async function routes(fastify, options) {
                         if (
                             filteredEvents[i].data.amount_y_out !== '0' &&
                             existedChats.length &&
-                            (+(filteredEvents[i].data.amount_y_out) / 1000000) >= 2000000
+                            (+(filteredEvents[i].data.amount_y_out) / 1000000) >= 3000000
                         ) {
                             let iconsCount = Math.floor((+filteredEvents[i].data.amount_y_out) / 10000000000);
 
